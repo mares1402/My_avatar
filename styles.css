@@ -210,4 +210,17 @@ ul {
         grid-template-columns: 1fr;
         /* 1 columna en pantallas pequeñas */
     }
+
+    .card {
+        text-align: center; /* Centra el contenido de las tarjetas en móvil */
+    }
+
+    .skill-bar {
+        margin-left: auto; /* Centra las barras de habilidad */
+        margin-right: auto;
+    }
+
+    ul {
+        padding-left: 0; /* Elimina el padding para un centrado correcto */
+    }
 }
