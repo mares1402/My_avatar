@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+:root {
+    --hiking-dark: #2C3E50;
+    --hiking-light: #ECF0F1;
+    --accent-blue: #3498DB;
+    --accent-gaming: #00FF9B;
+    --skill-bar-bg: #34495E;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--hiking-dark);
+    color: var(--hiking-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    background-color: var(--skill-bar-bg);
+    padding: 40px; /* Aumentamos el espacio interior */
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid var(--accent-blue);
+    gap: 40px; /* Aumentamos la separación */
+}
+
+.header-content {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.avatar-img {
+    width: 240px; /* Hacemos el avatar más grande */
+    height: 240px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-gaming);
+    box-shadow: 0 0 20px var(--accent-gaming);
+    flex-shrink: 0;
+}
+
+.profile-text h1 {
+    margin: 0;
+    color: var(--accent-gaming);
+    font-size: 2.8em; /* Título más grande */
+}
+
+.profile-text p {
+    margin: 5px 0 0;
+    color: var(--hiking-light);
+    opacity: 0.9;
+    font-size: 1.1em; /* Párrafos un poco más grandes */
+}
+
+.profile-text {
+    flex-basis: 70%;
+}
+
+.contact-info {
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.contact-info a {
+    color: var(--hiking-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2em; /* Información de contacto más grande */
+}
+
+.contact-info a:hover {
+    color: var(--accent-gaming);
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--accent-blue);
+    width: 20px;
+    /* Alineación de iconos */
+    text-align: center;
+}
+
+/* --- Grid Layout para las tarjetas --- */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas para un layout balanceado */
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--skill-bar-bg);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--accent-blue);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--accent-gaming);
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Estilos de Habilidades --- */
+.skill-bar {
+    background-color: var(--skill-bar-bg);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    height: 20px;
+    margin-top: 5px;
+    overflow: hidden;
+    border: 1px solid var(--accent-blue);
+}
+
+.skill-level {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--hiking-dark);
+}
+
+.skill-level.advanced {
+    background-color: var(--accent-gaming);
+    /* Efecto de brillo! */
+    box-shadow: 0 0 8px var(--accent-gaming);
+}
+
+.skill-level.intermediate {
+    background-color: var(--accent-blue);
+}
+
+/* --- Estilos para la tabla de investigación --- */
+.full-width {
+    grid-column: 1 / -1; /* Hace que esta tarjeta ocupe todo el ancho */
+}
+
+#job-research table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#job-research th,
+#job-research td {
+    padding: 12px;
+    text-align: center;
+    
+    border-bottom: 1px solid var(--accent-blue);
+}
+
+#job-research th {
+    background-color: #2c3e50;
+    color: var(--accent-gaming);
+}
+
+#job-research tbody tr:hover {
+    background-color: #34495e;
+}
+
+ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+/* Estilo específico para la lista de Hobbies */
+#hobbies li {
+    font-size: 1.5em; 
+    margin-bottom: 8px;
+}
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        /* 1 columna en pantallas pequeñas */
+    }
+}
