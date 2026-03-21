@@ -165,6 +165,21 @@ body {
     justify-content: center;
 }
 
+/* --- Estilos de Habilidades --- */
+/* Espaciado entre elementos de la lista de skills */
+#my-skills li:not(:last-child),
+#devops-skills li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/* Estilo para los iconos de las skills */
+#my-skills i, #devops-skills i {
+    margin-right: 10px;
+    color: var(--accent-blue);
+    font-size: 1.2em;
+    vertical-align: -0.15em; /* Alineación fina del icono */
+}
+
 /* Quitamos el padding por defecto de las listas y centramos los textos */
 .card ul {
     padding-left: 0;
@@ -174,7 +189,6 @@ body {
     text-align: center;
 }
 
-/* --- Estilos de Habilidades --- */
 .skill-bar {
     background-color: var(--skill-bar-bg);
     border-radius: 15px;
@@ -258,12 +272,8 @@ ul {
     list-style: none;
 }
 
-/* Estilo específico para la lista de Hobbies */
-#hobbies li {
-    font-size: 1.5em;
-    margin-bottom: 8px;
-}
-#soft-skills li {
+/* Estilo específico para listas de Hobbies y Soft Skills */
+#hobbies li, #soft-skills li {
     font-size: 1.5em;
     margin-bottom: 8px;
 }
@@ -299,8 +309,19 @@ ul {
         /* Centra el contenido de las tarjetas en móvil */
     }
 
-    #hobbies li {
+    #hobbies li,
+    #soft-skills li {
         font-size: 1.2em;
         /* Reducimos el tamaño en móvil para evitar desbordamiento */
+    }
+
+    #job-research th,
+    #job-research td {
+        font-size: 0.85em; /* Reducimos el tamaño de la fuente para que quepa mejor */
+        padding: 8px 4px; /* Ajustamos el padding para dar más espacio */
+    }
+
+    #job-research p {
+        font-size: 0.8em; /* Hacemos la nota de salario más pequeña */
     }
 }
