@@ -9,18 +9,27 @@
 
 :root {
     --hiking-dark: #2C3E50;
+    --hiking-dark-background: #2c3e508c;
     --hiking-light: #ECF0F1;
     --accent-blue: #3498DB;
+    --accent-blue-background: #3498db75;
     --accent-gaming: #00FF9B;
     --skill-bar-bg: #34495E;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--hiking-dark);
     color: var(--hiking-light);
     margin: 0;
     line-height: 1.6;
+    /* --- Fondo con imagen --- */
+    /* Creamos una capa de color semitransparente sobre la imagen para atenuarla */
+    background-image: linear-gradient(var(--accent-blue-background), var(--accent-blue-background)), url('imgs/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--hiking-dark);
+    backdrop-filter: blur(10px);
 }
 
 .container {
@@ -32,12 +41,17 @@ body {
 .profile-header {
     display: flex;
     align-items: center;
-    background-color: var(--skill-bar-bg);
-    padding: 40px; /* Aumentamos el espacio interior */
+    /* Hacemos el fondo semitransparente */
+    background-color: rgba(44, 62, 80, 0.947);
+    padding: 40px;
+    /* Aumentamos el espacio interior */
     border-radius: 15px;
     margin-bottom: 30px;
     border: 1px solid var(--accent-blue);
-    gap: 40px; /* Aumentamos la separación */
+    gap: 40px;
+    /* Aumentamos la separación */
+    /* Efecto "vidrio esmerilado" para mejorar la legibilidad */
+    backdrop-filter: blur(10px);
 }
 
 .header-content {
@@ -47,7 +61,8 @@ body {
 }
 
 .avatar-img {
-    width: 240px; /* Hacemos el avatar más grande */
+    width: 240px;
+    /* Hacemos el avatar más grande */
     height: 240px;
     border-radius: 50%;
     border: 4px solid var(--accent-gaming);
@@ -58,14 +73,16 @@ body {
 .profile-text h1 {
     margin: 0;
     color: var(--accent-gaming);
-    font-size: 2.8em; /* Título más grande */
+    font-size: 2.8em;
+    /* Título más grande */
 }
 
 .profile-text p {
     margin: 5px 0 0;
     color: var(--hiking-light);
     opacity: 0.9;
-    font-size: 1.1em; /* Párrafos un poco más grandes */
+    font-size: 1.1em;
+    /* Párrafos un poco más grandes */
 }
 
 .profile-text {
@@ -84,7 +101,8 @@ body {
     color: var(--hiking-light);
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 0.9em; /* Reducimos el texto para que quepa el email */
+    font-size: 0.9em;
+    /* Reducimos el texto para que quepa el email */
     display: flex;
     align-items: center;
 }
@@ -112,11 +130,14 @@ body {
 }
 
 .card {
-    background-color: var(--skill-bar-bg);
+    /* Hacemos el fondo semitransparente */
+    background-color: rgba(52, 73, 94, 0.75);
     padding: 25px;
     border-radius: 15px;
     border: 1px solid var(--accent-blue);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Efecto "vidrio esmerilado" para mejorar la legibilidad */
+    backdrop-filter: blur(10px);
     /* Make card a flex container so content can grow */
     display: flex;
     flex-direction: column;
@@ -143,6 +164,7 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
 /* Quitamos el padding por defecto de las listas y centramos los textos */
 .card ul {
     padding-left: 0;
@@ -162,7 +184,8 @@ body {
     margin-top: 5px;
     overflow: hidden;
     border: 0.5px solid var(--accent-blue);
-    margin-left: auto; /* Centra las barras de habilidad en todas las vistas */
+    margin-left: auto;
+    /* Centra las barras de habilidad en todas las vistas */
     margin-right: auto;
 }
 
@@ -171,7 +194,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px; /* Aumentamos el tamaño del texto en las barras */
+    font-size: 14px;
+    /* Aumentamos el tamaño del texto en las barras */
     font-weight: 600;
     color: var(--hiking-dark);
 }
@@ -187,7 +211,8 @@ body {
 
 /* --- Estilos para la tabla de investigación --- */
 .full-width {
-    grid-column: 1 / -1; /* Hace que esta tarjeta ocupe todo el ancho */
+    grid-column: 1 / -1;
+    /* Hace que esta tarjeta ocupe todo el ancho */
 }
 
 #job-research table {
@@ -199,19 +224,22 @@ body {
 #job-research th,
 #job-research td {
     padding: 12px;
-    text-align: center; /* Centramos el contenido de la tabla */
+    text-align: center;
+    /* Centramos el contenido de la tabla */
     border-bottom: 1px solid var(--accent-blue);
     /* Evita que el contenido largo desborde la tabla en móviles */
     word-break: break-word;
 }
 
 #job-research th {
-    background-color: #2c3e50;
+    background-color: rgba(44, 62, 80, 0.85);
+    /* Hacemos el header de la tabla semitransparente */
     color: var(--accent-gaming);
 }
 
 #job-research tbody tr:hover {
-    background-color: #34495e;
+    background-color: rgba(52, 73, 94, 0.9);
+    /* Efecto hover semitransparente */
 }
 
 #job-research td a {
@@ -232,9 +260,14 @@ ul {
 
 /* Estilo específico para la lista de Hobbies */
 #hobbies li {
-    font-size: 1.5em; 
+    font-size: 1.5em;
     margin-bottom: 8px;
 }
+#soft-skills li {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
 /* --- Media Queries para Responsividad --- */
 @media (max-width: 992px) {
     .header-content {
@@ -248,10 +281,11 @@ ul {
     }
 
     .contact-info a {
-        justify-content: center; /* Centra el contenido de los links de contacto */
+        justify-content: center;
+        /* Centra el contenido de los links de contacto */
     }
 
-   
+
 }
 
 @media (max-width: 768px) {
@@ -261,10 +295,12 @@ ul {
     }
 
     .card {
-        text-align: center; /* Centra el contenido de las tarjetas en móvil */
+        text-align: center;
+        /* Centra el contenido de las tarjetas en móvil */
     }
 
     #hobbies li {
-        font-size: 1.2em; /* Reducimos el tamaño en móvil para evitar desbordamiento */
+        font-size: 1.2em;
+        /* Reducimos el tamaño en móvil para evitar desbordamiento */
     }
 }
